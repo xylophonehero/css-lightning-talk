@@ -1,0 +1,22 @@
+---
+layout: page
+---
+
+# Some ncie grid layouts
+
+## Basic Header Main Footer
+
+Did you notice on the homepage the footer stayed at the bottom?
+
+There is no funny `position:fixed;` going on here, just grid.
+
+```
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+}
+```
+
+> We are using 100% instead of 100vh as 100vh deosn't work very well for mobile devices.
+> To do this, we also need `height: 100%` on html and body tags

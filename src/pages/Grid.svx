@@ -1,0 +1,39 @@
+---
+layout: page
+---
+
+<script>
+  import GridComponent from '../lib/GridComponent.svelte'
+  import HiddenText from '../lib/HiddenText.svelte'
+</script>
+
+# Grid
+
+> Grid is awesome
+
+<HiddenText 
+  question="How many media queries does the component below use?" 
+  answer="0"
+/>
+
+<GridComponent />
+
+There is a really awesome grid snippet that can create responsive rows based on a maximum size
+
+```
+div {
+  --min-child-width: 300px
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--min-child-width), 100%), 1fr));
+}
+```
+
+### Hold up, let's break it down.
+
+So the outer bit `repeat(auto-fit, 300px)`.
+This tells the grid to keep on creating columns `300px` wide and when it can't create any more, start a new line
+
+
+So this bit `repeat(auto-fit, 300px)`
+
+Finally adding in `min(var(--min-child-width), 100%)`

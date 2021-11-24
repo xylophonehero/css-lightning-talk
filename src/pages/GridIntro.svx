@@ -1,0 +1,74 @@
+---
+layout: page
+---
+<script>
+  import SimpleGrid from '../lib/SimpleGrid.svelte'
+</script>
+
+
+# Grid Intro
+
+## Why Grid?
+
+- Flexbox in two dimensions
+- Able to create complex layouts which are both responsive and fluid
+- Easy to create sought after layouts from a few years ago
+- 95.86% browser support
+
+## What do you need to create a grid?
+
+- Display property
+- Template columns and/or rows and/or areas
+- Gap between child
+- Alignment of children "justify-content", "align-items", "place-items"...
+
+```
+.grid {
+  display: grid;
+  grid-template-columns: 200px 100px 300px;
+  grid-auto-rows: 200px;
+  gap: 8px;
+  justify-content: center;
+}
+```
+
+<SimpleGrid />
+
+## What about fractional units
+
+Written as ratios 1fr, 2fr. 
+
+Much easier to grasp than flex-grow/shrink/basis.
+
+They can also be mixed with absolute units.
+
+```
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 100px 2fr;
+  grid-auto-rows: 200px;
+  gap: 8px;
+  justify-content: center;
+}
+```
+
+<SimpleGrid fractional />
+
+Notice how `justify-content: center;` is now doing nothing because our fractional units gobble up all the available space.
+
+## Child placement
+
+By default children are placed into the next available column. If there is no space we place the child at the start of the new row.
+
+But we can also control properties of grid children. In this example every 6th item is special
+
+```
+.special {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+```
+
+<SimpleGrid itemSpan />
+
+## Ok lets get onto the good stuff!
