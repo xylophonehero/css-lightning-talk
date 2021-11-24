@@ -6,4 +6,4 @@ layout: page
 
 ## Welcome to my talk on ~~Gatsby~~ Modern CSS
 
-But mainly we talk about Grid!
+But mainly we talk about Grid my new favoutire CSS property!

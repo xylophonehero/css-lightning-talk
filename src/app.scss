@@ -73,10 +73,11 @@ h6 {
 
   --main-50: hsl(var(--main-color-deg) 100% 90%);
   --main-100: hsl(var(--main-color-deg) 100% 5%);
+  --main-200: hsl(var(--main-color-deg) 90% 70%);
   --main-500: hsl(var(--main-color-deg) 50% 50%);
   --main-600: hsl(var(--main-color-deg) 70% 40%);
   --main-700: hsl(var(--main-color-deg) 80% 20%);
-  --main-900: hsl(var(--main-color-deg) 100% 90%);
+  --main-900: hsl(var(--main-color-deg) 100% 10%);
 
   @media (min-width: 700px) {
     --gutter-width: 32px;
@@ -85,8 +86,15 @@ h6 {
   font-size: 1.25rem;
 }
 
+h1,
+h2,
+h3 {
+  color: var(--main-200);
+}
+
 h1 {
   font-size: clamp(2rem, 1rem + 5vw, 4rem);
+  text-align: center;
 }
 
 h2 {
@@ -110,6 +118,7 @@ article {
   display: grid;
   grid-template-columns: 1fr min(70ch, 100%) 1fr;
   padding: 32px var(--gutter-width);
+  justify-content: center;
 
   & > * {
     grid-column: 2;
@@ -117,6 +126,12 @@ article {
 
   & > .full-bleed {
     grid-column: 1 / -1;
+  }
+
+  & > .full-bleed-gutter {
+    grid-column: 1 / -1;
+    margin-left: calc(var(--gutter-width) * -1);
+    margin-right: calc(var(--gutter-width) * -1);
   }
 
   & > pre {
@@ -141,5 +156,18 @@ article {
     padding: 3px 6px;
     margin: 0 4px;
     border-radius: 4px;
+  }
+
+  & > img {
+    justify-self: center;
+  }
+
+  & li::marker {
+    color: var(--main-200);
+  }
+
+  & a {
+    color: var(--main-200);
+    text-decoration: none;
   }
 }

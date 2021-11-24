@@ -1,5 +1,57 @@
 ---
 layout: page
 ---
+<script>
+  import ColorExamples from '../lib/ColorExamples.svelte'
+  import ColorPicker from '../lib/ColorPicker.svelte'
+</script>
 
 # Color formats
+
+## Named colors
+
+Good for making quick examples. There some quite nice names.
+
+<ColorExamples />
+
+[Here](https://www.rapidtables.com/web/css/css-color.html) is a list if you are intrested!
+
+## Hex and RGB
+
+This is what computers use and as humans we really don't understand what color something will be from three values.
+
+Could you tell me off the top of your head what color `#8cd9d9` was?
+
+Even `rgb(140, 217, 217)` doesn't really tell you much.
+
+## HSL
+
+Much easier to understand and manipulate
+
+### Hue
+
+Stands for the color shade. Usually in degrees as it comes full circle.
+
+### Saturation
+
+How colorful the color is. 0% means greyscale 100% is fully saturated.
+
+### Lightness
+
+How light or dark a color is. 0% is black 100% is white.
+
+### Back to the previous example
+
+Could you tell me what color `hsl(180deg 50% 70%)` was?
+
+- 180deg is around cyan area on the hue chart
+
+- You also know the color is medium saturated so not too bright
+
+- And finally 70% is quite bright
+
+So it must be the color of the sky!
+
+## Have some fun!
+
+<ColorPicker />

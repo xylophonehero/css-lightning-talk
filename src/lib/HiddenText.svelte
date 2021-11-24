@@ -19,7 +19,7 @@
     </div>
     {#if !isRevealed}
       <button
-        transition:fly={{ x: 100, duration: 700, easing: cubicIn }}
+        out:fly={{ x: 100, duration: 700, easing: cubicIn }}
         on:click={() => (isRevealed = true)}
       >
         Click to reveal

@@ -1,14 +1,33 @@
 ---
 layout: page
 ---
+<script>
+  import GridCenter from '../lib/GridCenter.svelte'
+  import HolyGrail from '../lib/Holygrail.svelte'
+  import FullBleedExamples from '../lib/FullBleedExamples.svelte'
+</script>
 
-# Some ncie grid layouts
+
+# Some nice grid layouts
+
+## Two line center
+
+No more absolute positioning, transforming 50%, nonsense!
+
+```
+.grid {
+  display: grid;
+  place-items: center;
+}
+```
+
+<GridCenter />
 
 ## Basic Header Main Footer
 
 Did you notice on the homepage the footer stayed at the bottom?
 
-There is no funny `position:fixed;` going on here, just grid.
+There is no funny positioning or calculating height going on here, just grid.
 
 ```
 #app {
@@ -20,3 +39,64 @@ There is no funny `position:fixed;` going on here, just grid.
 
 > We are using 100% instead of 100vh as 100vh deosn't work very well for mobile devices.
 > To do this, we also need `height: 100%` on html and body tags
+
+## Holy grail layout
+
+The layout that you see on most WordPress websites a few years back
+
+Previously used floats and then flexbox but grid makes this super easy
+
+```
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr 150px;
+  grid-template-rows: 4rem 1fr 5rem;
+  min-height: 100%;
+}
+
+.header {
+  grid-column: 1 / -1;
+}
+
+.footer {
+  grid-column: 1/ -1;
+}
+```
+
+<HolyGrail />
+
+## Full bleed layout
+
+Your blog posts should have a maximum width of between 60ch - 75ch to make them readable by the human eye
+
+> [x]ch = x "0"s in the font you are using
+
+So we place our content in a grid that looks like this.
+We also can account for small gutters to the side so the text isn't too close on mobile.
+
+Anytime we want to take up the whole space, we add a class which spans the whole grid.
+We can also use some negative margin to span the gutters too! (Nice for hero images)
+
+```
+article {
+  display: grid;
+  grid-template-columns: 1fr min(70ch, 100%) 1fr;
+  padding: 32px var(--gutter-width);
+
+  & > * {
+    grid-column: 2;
+  }
+
+  & > .full-bleed {
+    grid-column: 1 / -1;
+  }
+
+  & > .full-bleed-gutter {
+    grid-column: 1 / -1;
+    margin-left: calc(var(--gutter-width) * -1);
+    margin-right: calc(var(--gutter-width) * -1);
+  }
+}
+```
+
+<FullBleedExamples />

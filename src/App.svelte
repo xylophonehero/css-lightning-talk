@@ -4,7 +4,8 @@
   import Colors from "./pages/Colors.svx"
   import Variables from "./pages/Variables.svx"
   import Grid1 from "./pages/GridIntro.svx"
-  import Grid2 from "./pages/Grid.svx"
+  import Grid2 from "./pages/Grid2.svx"
+  import Grid3 from "./pages/Grid3.svx"
 
   export let url = ""
 </script>
@@ -16,8 +17,10 @@
     <Link to="/colors">Colors</Link>
     <Link to="/grid">Grid</Link>
     <Link to="/grid2">2</Link>
+    <Link to="/grid3">3</Link>
   </nav>
   <main>
+    <Route path="grid3" component={Grid3} />
     <Route path="grid2" component={Grid2} />
     <Route path="grid" component={Grid1} />
     <Route path="colors" component={Colors} />
@@ -32,11 +35,13 @@
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100%;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 4rem 1fr 3rem;
     color: hsl(var(--main-color-deg) 100% 95%);
   }
 
   nav {
+    position: sticky;
+    top: 0;
     background-color: hsl(var(--main-color-deg) 70% 50%);
     padding: 16px var(--gutter-width);
     display: flex;
@@ -46,6 +51,12 @@
       color: inherit;
       font-size: 1.5rem;
       text-decoration: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav > :global(a) {
+      display: none;
     }
   }
 

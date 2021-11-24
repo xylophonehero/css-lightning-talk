@@ -8,7 +8,9 @@ layout: page
 
 # CSS Variables
 
-All programming languages use variables. Why shouldn't CSS?
+> All programming languages use variables. Why shouldn't CSS?
+
+<img src="https://i.imgflip.com/5vcane.jpg" />
 
 You can set one with double dashes the same way to set a property.
 
