@@ -35,7 +35,7 @@ Stands for the color shade. Usually in degrees as it comes full circle.
 
 ### Saturation
 
-How colorful the color is. 0% means greyscale 100% is fully saturated.
+How intense the color is. 0% means greyscale 100% is fully saturated.
 
 ### Lightness
 
@@ -45,17 +45,16 @@ How light or dark a color is. 0% is black 100% is white.
 
 Could you tell me what color `hsl(180deg 50% 70%)` was 🤔?
 
-- 180deg is around cyan area on the hue chart
+- 180deg is around cyan area on the hue chart 🙃
 
-- You also know the color is medium saturated so not too bright
+- You also know the color is medium saturated so not too vibrant 👩‍🎓
 
-- And finally 70% is quite bright
+- And finally 70% a little on the light side 🌤
 
 <HiddenText 
   question="What color is hsl(180deg 50% 70%)"
   answer="Skyblue"
 />
-
 
 ## Have some fun!
 

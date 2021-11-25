@@ -20,6 +20,6 @@ layout: page
 
 ## Thanks for listening
 
-I'm very happy to talk more in-depth about CSS (or Svelte, React, Next...) over a few beers anytime!
+I'm very happy to talk more in-depth about CSS (or Svelte, React, Next.js...) over a few beers anytime!
 
 🍻🍻😂🍻🍻😝🍻🍻🙊🍻🍻🤮🍻🍻🙃🍻🍻🤭🍻🍻🤪🍻🍻😵🍻🍻

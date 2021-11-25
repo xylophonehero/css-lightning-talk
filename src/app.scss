@@ -202,3 +202,23 @@ article {
   font-size: 3rem;
   grid-template-areas: "single";
 }
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  top: 105%;
+  right: 0;
+  border-bottom: 3px solid currentColor;
+  max-width: 0px;
+  width: 100%;
+  transition: max-width ease-in-out 200ms;
+}
+
+a:hover::before {
+  max-width: 100%;
+  left: 0;
+}

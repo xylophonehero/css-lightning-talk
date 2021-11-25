@@ -40,7 +40,7 @@
     <Route path="/" component={Home} />
   </main>
   <footer>
-    <span>by Nick👨</span>
+    <a href="https://nickworrall.co.uk" target="_blank">Nick👨</a>
     <a
       href="https://github.com/xylophonehero/css-lightning-talk"
       target="_blank">Github👽</a

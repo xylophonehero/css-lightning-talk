@@ -40,7 +40,7 @@ They can also be set inside media queries 🎥
 }
 ```
 
-You can even set in your React/Svelte components which us allows us to control them with JS.
+You can even set them in your React/Svelte components which us allows us to control them with JS.
 
 Useful for making generative art 🖼
 

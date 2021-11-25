@@ -76,7 +76,7 @@ A good use case for this is the Holy Grail 🍺 layout. You can easily reshape t
 }
 
 .👈 {
-  grid-aria: sidebar;
+  grid-area: sidebar;
 }
 
 // And do the same for the other three!
@@ -117,7 +117,7 @@ You might be thinking I've done something like this
 
 <GridTemplateExample alt showControls />
 
-It's a very nice implementation but look what happens when the circles get really clode together 😝
+It's a very nice implementation but look what happens when the circles get really close together 😝
 
 There is another intresting thing you can do with grid areas.
 Multiple children can share the same area 😲

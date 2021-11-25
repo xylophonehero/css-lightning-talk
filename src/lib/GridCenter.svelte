@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="item" />
+  <div class="item">😘</div>
 </div>
 
 <style lang="scss">
@@ -14,5 +14,8 @@
     height: 100px;
     width: 100px;
     background-color: var(--main-500);
+    display: grid;
+    font-size: 2rem;
+    place-items: center;
   }
 </style>

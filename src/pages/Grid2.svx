@@ -39,7 +39,7 @@ There is no funny positioning or calculating height going on here, just grid.
 }
 ```
 
-> We are using 100% instead of 100vh as 100vh deosn't work very well for mobile devices.
+> We are using 100% instead of 100vh as 100vh doesn't work very well for mobile devices.
 > To do this, we also need `height: 100%` on html and body tags
 
 ## Holy grail layout
