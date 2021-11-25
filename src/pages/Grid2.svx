@@ -23,6 +23,8 @@ No more absolute positioning, transforming 50%, nonsense 👿
 
 <GridCenter />
 
+<img src="https://miro.medium.com/max/1084/1*lD4tMeixHrs50ErTkh30MQ.jpeg" alt="life hack meme" />
+
 ## Basic Header Main Footer
 
 Did you notice on the homepage the footer stayed at the bottom? 👀
