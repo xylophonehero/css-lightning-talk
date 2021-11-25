@@ -7,7 +7,6 @@
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.results)
         items = data.results.slice(0, 12)
       })
       .catch((err) => {
@@ -15,13 +14,13 @@
         return []
       })
   })
-  console.log(items[0])
-  // const items = [...Array(24).keys()]
+
+  export let crazy
 </script>
 
-<div class="wrapper full-bleed">
+<div class="wrapper full-bleed" class:wft={crazy}>
   {#each items as item}
-    <div class="item">
+    <div class="item" class:crazy-item={crazy}>
       <div class="name">{item.name}</div>
       <img class="image" src={item.image} alt={item.name} />
     </div>
@@ -36,10 +35,10 @@
   }
 
   .item {
-    background-color: hsl(var(--main-color-deg) 50% 30%);
+    background-color: var(--main-600);
     border-radius: 8px;
     padding: 8px;
-    box-shadow: 4px 4px 4px hsl(var(--main-color-deg) 70% 20%);
+    box-shadow: 4px 4px 4px var(--main-700);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
     place-items: center;
@@ -54,5 +53,35 @@
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+  }
+
+  .wft {
+    /* first breakpoint*/
+    --w1: 800px;
+    --n: 4;
+    /* second breakpoint*/
+    --w2: 500px;
+    --m: 2;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(
+        clamp(
+          clamp(
+            100%/ (var(--n) + 1) + 0.1%,
+            (var(--w1) - 100vw) * 1000,
+            100%/ (var(--m) + 1) + 0.1%
+          ),
+          (var(--w2) - 100vw) * 1000,
+          100%
+        ),
+        1fr
+      )
+    );
+  }
+
+  .crazy-item {
+    background: linear-gradient(var(--main-600) 0 0) 0 / max(0px, 300px - 100%)
+        1px,
+      hsl(180deg 100% 20%);
   }
 </style>

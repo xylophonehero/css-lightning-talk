@@ -10,16 +10,16 @@ layout: page
 
 ## Why Grid?
 
-- Flexbox in two dimensions
-- Able to create complex layouts which are both responsive and fluid
-- Easy to create sought after layouts from a few years ago
-- 95.86% browser support
+- Flexbox in two dimensions 👇👉
+- Able to create complex layouts which are both responsive and fluid 🚿
+- Easy to create sought after layouts from a few years ago 😅
+- 95.86% browser support 🤭
 
 ## What do you need to create a grid?
 
 - Display property
-- Template columns and/or rows and/or areas
-- Gap between child
+- Template/auto columns and/or rows and/or areas
+- Gap between children
 - Alignment of children "justify-content", "align-items", "place-items"...
 
 ```
@@ -40,10 +40,10 @@ Written as ratios 1fr, 2fr.
 
 Much easier to grasp than flex-grow/shrink/basis.
 
-They can also be mixed with absolute units.
+They can also be mixed with absolute units 😋
 
 ```
-.grid {
+.😝 {
   display: grid;
   grid-template-columns: 1fr 100px 2fr;
   grid-auto-rows: 200px;
@@ -54,7 +54,7 @@ They can also be mixed with absolute units.
 
 <SimpleGrid fractional />
 
-Notice how `justify-content: center;` is now doing nothing because our fractional units gobble up all the available space.
+Notice how `justify-content: center;` is now doing nothing because our fractional units gobble up all the available space 🦐
 
 ## Child placement
 
@@ -63,7 +63,7 @@ By default children are placed into the next available column. If there is no sp
 But we can also control properties of grid children. In this example every 6th item is special
 
 ```
-.special {
+.🤗:nth-child(6n) {
   grid-column-start: 2;
   grid-column-end: 4;
 }
@@ -71,4 +71,4 @@ But we can also control properties of grid children. In this example every 6th i
 
 <SimpleGrid itemSpan />
 
-## Ok lets get onto the good stuff!
+## Ok lets get onto the good stuff! 👍

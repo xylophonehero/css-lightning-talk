@@ -44,6 +44,7 @@
     font-weight: bold;
     transform: rotate(10deg);
     color: var(--main-500);
+    z-index: 2;
   }
 
   .answer-wrapper {
@@ -54,8 +55,10 @@
   }
 
   .text {
+    color: hsl(180deg 50% 70%);
     grid-area: area;
     font-size: 24px;
+    font-weight: bold;
   }
 
   button {

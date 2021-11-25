@@ -12,10 +12,10 @@ layout: page
 
 ## Two line center
 
-No more absolute positioning, transforming 50%, nonsense!
+No more absolute positioning, transforming 50%, nonsense 👿
 
 ```
-.grid {
+.🍙 {
   display: grid;
   place-items: center;
 }
@@ -25,12 +25,12 @@ No more absolute positioning, transforming 50%, nonsense!
 
 ## Basic Header Main Footer
 
-Did you notice on the homepage the footer stayed at the bottom?
+Did you notice on the homepage the footer stayed at the bottom? 👀
 
 There is no funny positioning or calculating height going on here, just grid.
 
 ```
-#app {
+.🏡 {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
@@ -42,23 +42,23 @@ There is no funny positioning or calculating height going on here, just grid.
 
 ## Holy grail layout
 
-The layout that you see on most WordPress websites a few years back
+The layout that you see on most WordPress 🤮 websites a few years back
 
 Previously used floats and then flexbox but grid makes this super easy
 
 ```
-.wrapper {
+.🎁 {
   display: grid;
   grid-template-columns: 200px 1fr 150px;
   grid-template-rows: 4rem 1fr 5rem;
   min-height: 100%;
 }
 
-.header {
+.😃 {
   grid-column: 1 / -1;
 }
 
-.footer {
+.🦶 {
   grid-column: 1/ -1;
 }
 ```
@@ -67,11 +67,12 @@ Previously used floats and then flexbox but grid makes this super easy
 
 ## Full bleed layout
 
-Your blog posts should have a maximum width of between 60ch - 75ch to make them readable by the human eye
+Your blog posts should have a maximum width of between 60ch - 75ch to make them readable by the human eye 👁‍🗨
 
 > [x]ch = x "0"s in the font you are using
 
-So we place our content in a grid that looks like this.
+So we place our content in a grid that looks like this post.
+
 We also can account for small gutters to the side so the text isn't too close on mobile.
 
 Anytime we want to take up the whole space, we add a class which spans the whole grid.
@@ -87,11 +88,11 @@ article {
     grid-column: 2;
   }
 
-  & > .full-bleed {
+  & > .full-🩸 {
     grid-column: 1 / -1;
   }
 
-  & > .full-bleed-gutter {
+  & > .full-🩸-gutter {
     grid-column: 1 / -1;
     margin-left: calc(var(--gutter-width) * -1);
     margin-right: calc(var(--gutter-width) * -1);

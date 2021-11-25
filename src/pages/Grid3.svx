@@ -7,9 +7,9 @@ layout: page
   import HiddenText from '../lib/HiddenText.svelte'
 </script>
 
-# Grid
+# Grid Trickery
 
-> Grid is awesome
+## A question
 
 <HiddenText 
   question="How many media queries does the component below use?" 
@@ -18,7 +18,9 @@ layout: page
 
 <GridComponent />
 
-There is a really awesome grid snippet that can create responsive rows based on a maximum size
+### But how?
+
+There is a really awesome grid snippet that can create responsive rows based on a maximum size 🤯
 
 ```
 div {
@@ -30,10 +32,86 @@ div {
 
 ### Hold up, let's break it down.
 
+> I'm replace `var(--min-child-width)` with `300px` so it's a bit easier to see
+
 So the outer bit `repeat(auto-fit, 300px)`.
-This tells the grid to keep on creating columns `300px` wide and when it can't create any more, start a new line
+This tells the grid to keep on creating columns `300px` wide and when it can't create any more, start a new line 👷‍♀️
 
+This inner bit `minax(300px, 1fr)` is special to grid.
+`minmax` defines a size range greater than or equal to min and less than or equal to max.
+So in our context each column minimum's value is `300px` and if there is extra space, the column will grow to fill it out 👨‍🍳
 
-So this bit `repeat(auto-fit, 300px)`
+Finally adding in `min(300px, 100%)` means when the screen size is small, `100%` will be less than `300px` and we don't get any overflow 🤢
 
-Finally adding in `min(var(--min-child-width), 100%)`
+We are actually using this snippet twice in our component.
+
+- Once for the grid cards: `repeat(auto-fit, minmax(min(300px, 100%), 1fr));`
+- And once for the card's image and text; `repeat(auto-fit, minmax(min(170px, 100%), 1fr));`
+
+It looks like we are using container queries ✨
+
+## What about this example?
+
+<HiddenText 
+  question="How many media queries does the component below use?" 
+  answer="0"
+/>
+
+<GridComponent crazy />
+
+### Don't believe me?
+
+```
+.🥴 {
+  /* first breakpoint*/
+  --w1: 800px;
+  --n: 4;
+  /* second breakpoint*/
+  --w2: 500px;
+  --m: 2;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      clamp(
+        clamp(
+          100%/ (var(--n) + 1) + 0.1%,
+          (var(--w1) - 100vw) * 1000,
+          100%/ (var(--m) + 1) + 0.1%
+        ),
+        (var(--w2) - 100vw) * 1000,
+        100%
+      ),
+      1fr
+    )
+  );
+}
+```
+
+Go [here](https://css-tricks.com/responsive-layouts-fewer-media-queries/) for the complete explaination.
+But basically it's very clever use of clamp to emulate media queries 🛠
+
+```
+clamp(100%/(2 + 1) + 0.1%, (500px - 100vw)*1000, 100%)
+```
+
+When the screen size `100vw` is greater than `500px` then the desired value is negative.
+So it evaluates to `(100%/(3) + 0.1%) = 33.4%` which is enough to fit in two cards. (A tiny bit too big to fit 3 cards).
+
+When the screen size `100vw` is smaller than `500px` then the desired value is positive.
+Multiplying by `1000` ensures we hit our highest clamp value.
+So it evaluates to `100%` which means we only fit one card in.
+
+We can also use this method to change the color of the cards based on their size without media queries!
+
+```
+.😖 {
+  background: linear-gradient(purple 0 0) 0 / max(0px, 300px - 100%) 1px, teal;
+}
+```
+
+This one requires knowledge about backgrounds and linear gradients.
+
+Basically if the item is bigger than `300px`, then the gradient has a width of `0px` so the second color takes full effect.
+If the item is smaller than `300px`, then the gradient has has a positive width and takes up the whole space.
+
+## That's too much for me!

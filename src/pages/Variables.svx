@@ -5,25 +5,24 @@ layout: page
   import VariableComponent from "../lib/VariableComponent.svelte";
 </script>
 
-
 # CSS Variables
 
-> All programming languages use variables. Why shouldn't CSS?
+> All programming languages use variables. Why shouldn't CSS? 🤷‍♀️
 
-<img src="https://i.imgflip.com/5vcane.jpg" />
+<img src="https://i.imgflip.com/5vcane.jpg" alt="meme" />
 
 You can set one with double dashes the same way to set a property.
 
 Then consume it anywhere within the scope of the element.
 
 ```
-.article {
+.😡 {
   --my-color: red;
   color: var(--my-color);
 }
 ```
 
-You can set global css variables on the root (html tag or shadow root)
+You can set global css variables on the root 🌳 (html tag or shadow root?)
 
 ```
 :root {
@@ -31,7 +30,7 @@ You can set global css variables on the root (html tag or shadow root)
 }
 ```
 
-They can also be set inside media queries
+They can also be set inside media queries 🎥
 
 ```
 :root {
@@ -41,7 +40,9 @@ They can also be set inside media queries
 }
 ```
 
-You can even set in your React/Svelte components which us allows us to control them with JS
+You can even set in your React/Svelte components which us allows us to control them with JS.
+
+Useful for making generative art 🖼
 
 ```
 <script>
@@ -51,14 +52,14 @@ You can even set in your React/Svelte components which us allows us to control t
 <div>
   {#each items as item}
     <div
-      class="item"
+      class="👻"
       style="--color-deg: {(item * 360) / 20};--item-width: {item * 20 + 20}px"
     />
   {/each}
 </div>
 
 <style lang="scss">
-  .item {
+  .👻 {
     background-color: hsl(var(--color-deg) 100% 50%);
     width: var(--item-width, 20px);
     height: 20px;
@@ -68,5 +69,3 @@ You can even set in your React/Svelte components which us allows us to control t
 ```
 
 <VariableComponent />
-
-

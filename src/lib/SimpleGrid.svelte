@@ -30,7 +30,7 @@
     background-color: hsl(var(--item-color-deg) 100% 50%);
   }
 
-  .special {
+  .item:nth-child(6n) {
     grid-column-start: 2;
     grid-column-end: 4;
   }

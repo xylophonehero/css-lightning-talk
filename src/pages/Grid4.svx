@@ -1,0 +1,157 @@
+---
+layout: page
+---
+
+<script>
+  import GridSimpleArea from "../lib/GridSimpleArea.svelte"
+  import GridTemplateExample from "../lib/GridTemplateExample.svelte"
+  import HolyGrail from "../lib/HolyGrail.svelte"
+</script>
+
+# Grid areas
+
+> The hidden grid property that most developers don't know exists
+
+## What are they?
+
+Once we have our grid we can then template out some areas and assign children to them
+
+```
+.🎁 {
+  display: grid;
+  grid-template-areas:
+    "a b b"
+    "a b b"
+    "a . ."
+    "a c c";
+  grid-auto-rows: 100px;
+}
+
+.🍌 {
+  grid-area: a;
+}
+
+.🥥 {
+  grid-area: b;
+}
+
+.🍆 {
+  grid-area: c;
+}
+```
+
+<GridSimpleArea />
+
+## Back to the Holy Grail
+
+A good use case for this is the Holy Grail 🍺 layout. You can easily reshape the grid with a media query
+
+```
+.🍺 {
+  display: grid;
+  grid-template-columns: 200px 1fr 150px;
+  grid-template-rows: 5rem 1fr 6rem;
+  min-height: 600px;
+
+  grid-template-areas:
+    "header header header"
+    "sidebar main aside"
+    "footer footer footer";
+}
+
+@media (max-width: 600px) {
+  .🍺 {
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+.😃 {
+  grid-area: header;
+}
+
+.👈 {
+  grid-aria: sidebar;
+}
+
+// And do the same for the other three!
+```
+
+<HolyGrail />
+
+Doing it this way also gives us an added bonus for accessibility 🙈
+
+We can move the main component above the sidebar in the html so when a keyboard user is tabbing through the content, 
+the main component's interactive elements will show before the sidebar's elements 💯
+
+## Does this component use grid?
+
+<GridTemplateExample />
+
+Well duh. It's a talk about CSS grid 🙃
+
+But it's probably not in the way you are thinking...
+
+You might be thinking I've done something like this
+
+```
+.🟣 {
+  grid-template-columns: 100px 1fr 100px 1fr 100px;
+  grid-template-rows: 100px 1fr 100px 1fr 100px;
+  grid-template-areas: 
+    ". . t . ."
+    ". . . . ."
+    "l . c . r"
+    ". . . . ."
+    ". . b . ."
+  ;
+}
+```
+
+> `100px` whould be replaced with `var(--circle-size)` but it didn't fit nicely in the box 🤐
+
+<GridTemplateExample alt showControls />
+
+It's a very nice implementation but look what happens when the circles get really clode together 😝
+
+There is another intresting thing you can do with grid areas.
+Multiple children can share the same area 😲
+
+```
+.🟣 {
+  grid-template-areas: "circle";
+}
+
+.🧒 {
+  grid-area: circle;
+}
+
+.🧒:nth-child(1) {
+  place-self: start center;
+}
+
+.🧒:nth-child(2) {
+  place-self: center start;
+}
+
+.🧒:nth-child(3) {
+  place-self: center;
+}
+
+.🧒:nth-child(4) {
+  place-self: center end;
+}
+
+.🧒:nth-child(5) {
+  place-self: end center;
+}
+```
+
+<GridTemplateExample showControls />
+
+## I think that's enough for now...

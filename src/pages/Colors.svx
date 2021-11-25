@@ -4,13 +4,14 @@ layout: page
 <script>
   import ColorExamples from '../lib/ColorExamples.svelte'
   import ColorPicker from '../lib/ColorPicker.svelte'
+  import HiddenText from '../lib/HiddenText.svelte'
 </script>
 
 # Color formats
 
 ## Named colors
 
-Good for making quick examples. There some quite nice names.
+Good for making quick examples. There some quite nice names 😹
 
 <ColorExamples />
 
@@ -20,13 +21,13 @@ Good for making quick examples. There some quite nice names.
 
 This is what computers use and as humans we really don't understand what color something will be from three values.
 
-Could you tell me off the top of your head what color `#8cd9d9` was?
+Could you tell me off the top of your head what color `#8cd9d9` was 🤷‍♂️?
 
 Even `rgb(140, 217, 217)` doesn't really tell you much.
 
 ## HSL
 
-Much easier to understand and manipulate
+Much easier to understand and manipulate 😎😎
 
 ### Hue
 
@@ -42,7 +43,7 @@ How light or dark a color is. 0% is black 100% is white.
 
 ### Back to the previous example
 
-Could you tell me what color `hsl(180deg 50% 70%)` was?
+Could you tell me what color `hsl(180deg 50% 70%)` was 🤔?
 
 - 180deg is around cyan area on the hue chart
 
@@ -50,7 +51,11 @@ Could you tell me what color `hsl(180deg 50% 70%)` was?
 
 - And finally 70% is quite bright
 
-So it must be the color of the sky!
+<HiddenText 
+  question="What color is hsl(180deg 50% 70%)"
+  answer="Skyblue"
+/>
+
 
 ## Have some fun!
 

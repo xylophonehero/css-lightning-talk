@@ -4,6 +4,7 @@ layout: page
 
 # Hello
 
-## Welcome to my talk on ~~Gatsby~~ Modern CSS
+## Welcome to my talk on ~~Gatsby~~ 🤮 Modern CSS 😎
 
-But mainly we talk about Grid my new favoutire CSS property!
+But mainly we talk about ❤ Grid ❤ my new favoutire CSS property!
+
