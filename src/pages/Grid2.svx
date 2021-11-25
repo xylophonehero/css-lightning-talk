@@ -3,7 +3,7 @@ layout: page
 ---
 <script>
   import GridCenter from '../lib/GridCenter.svelte'
-  import HolyGrail from '../lib/Holygrail.svelte'
+  import HolyGrail from '../lib/HolyGrail.svelte'
   import FullBleedExamples from '../lib/FullBleedExamples.svelte'
 </script>
 
@@ -23,7 +23,7 @@ No more absolute positioning, transforming 50%, nonsense 👿
 
 <GridCenter />
 
-<img src="https://miro.medium.com/max/1084/1*lD4tMeixHrs50ErTkh30MQ.jpeg" alt="life hack meme" />
+<img src="https://miro.medium.com/max/1084/1*lD4tMeixHrs50ErTkh30MQ.jpeg" alt="life hack meme" style="max-width: 400px" />
 
 ## Basic Header Main Footer
 
