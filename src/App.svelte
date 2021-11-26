@@ -12,20 +12,20 @@
 
   export let url = ""
 
-  // history.pushState = new Proxy(history.pushState, {
-  //   apply(target, thisArg, argumentsList) {
-  //     Reflect.apply(target, thisArg, argumentsList)
-  //     scrollTo(0, 0)
-  //   },
-  // })
-
-  onMount(() => {
-    const bg = localStorage.getItem("bg")
-    document.documentElement.style.setProperty(
-      "--main-color-deg",
-      `${bg.toString()}deg`
-    )
+  history.pushState = new Proxy(history.pushState, {
+    apply(target, thisArg, argumentsList) {
+      Reflect.apply(target, thisArg, argumentsList)
+      scrollTo(0, 0)
+    },
   })
+
+  // onMount(() => {
+  //   const bg = localStorage.getItem("bg")
+  //   document.documentElement.style.setProperty(
+  //     "--main-color-deg",
+  //     `${bg.toString()}deg`
+  //   )
+  // })
 </script>
 
 <svelte:head>
