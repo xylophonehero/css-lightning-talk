@@ -12,12 +12,12 @@
 
   export let url = ""
 
-  history.pushState = new Proxy(history.pushState, {
-    apply(target, thisArg, argumentsList) {
-      Reflect.apply(target, thisArg, argumentsList)
-      scrollTo(0, 0)
-    },
-  })
+  // history.pushState = new Proxy(history.pushState, {
+  //   apply(target, thisArg, argumentsList) {
+  //     Reflect.apply(target, thisArg, argumentsList)
+  //     scrollTo(0, 0)
+  //   },
+  // })
 
   onMount(() => {
     const bg = localStorage.getItem("bg")
