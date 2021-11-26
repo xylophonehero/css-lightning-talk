@@ -19,6 +19,10 @@ Then consume it anywhere within the scope of the element.
 .😡 {
   --my-color: red;
   color: var(--my-color);
+
+  & 🍎 {
+    background-color: var(--my-color);
+  }
 }
 ```
 
