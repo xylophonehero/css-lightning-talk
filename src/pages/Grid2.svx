@@ -23,7 +23,7 @@ No more absolute positioning, transforming 50%, nonsense 👿
 
 <GridCenter />
 
-<img src="https://miro.medium.com/max/1084/1*lD4tMeixHrs50ErTkh30MQ.jpeg" alt="life hack meme" style="max-width: 400px" />
+<img src="https://miro.medium.com/max/1084/1*lD4tMeixHrs50ErTkh30MQ.jpeg" alt="life hack meme" style="width: 400px" />
 
 ## Basic Header Main Footer
 
@@ -42,11 +42,13 @@ There is no funny positioning or calculating height going on here, just grid.
 > We are using 100% instead of 100vh as 100vh doesn't work very well for mobile devices.
 > To do this, we also need `height: 100%` on html and body tags
 
-## Holy grail layout
+## Holy grail layout 🍺
 
 The layout that you see on most WordPress 🤮 websites a few years back
 
 Previously used floats and then flexbox but grid makes this super easy
+
+<HolyGrail />
 
 ```
 .🎁 {
@@ -65,7 +67,6 @@ Previously used floats and then flexbox but grid makes this super easy
 }
 ```
 
-<HolyGrail />
 
 ## Full bleed layout
 
@@ -73,12 +74,7 @@ Your blog posts should have a maximum width of between 60ch - 75ch to make them 
 
 > [x]ch = x "0"s in the font you are using
 
-So we place our content in a grid that looks like this post.
-
-We also can account for small gutters to the side so the text isn't too close on mobile.
-
-Anytime we want to take up the whole space, we add a class which spans the whole grid.
-We can also use some negative margin to span the gutters too! (Nice for hero images)
+So we place our content in a grid that.
 
 ```
 article {
@@ -89,7 +85,14 @@ article {
   & > * {
     grid-column: 2;
   }
+```
 
+We are also accounting for small gutters to the side so the text isn't too close on mobile.
+
+Anytime we want to take up the whole space, we add a class which spans the whole grid.
+We can also use some negative margin to span the gutters too! (Nice for hero images)
+
+```
   & > .full-🩸 {
     grid-column: 1 / -1;
   }
@@ -101,5 +104,4 @@ article {
   }
 }
 ```
-
 <FullBleedExamples />

@@ -8,8 +8,24 @@
   import Grid3 from "./pages/Grid3.svx"
   import Grid4 from "./pages/Grid4.svx"
   import Fin from "./pages/Fin.svx"
+  import { onMount } from "svelte"
 
   export let url = ""
+
+  history.pushState = new Proxy(history.pushState, {
+    apply(target, thisArg, argumentsList) {
+      Reflect.apply(target, thisArg, argumentsList)
+      scrollTo(0, 0)
+    },
+  })
+
+  onMount(() => {
+    const bg = localStorage.getItem("bg")
+    document.documentElement.style.setProperty(
+      "--main-color-deg",
+      `${bg.toString()}deg`
+    )
+  })
 </script>
 
 <svelte:head>

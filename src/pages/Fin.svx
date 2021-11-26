@@ -16,7 +16,7 @@ layout: page
 - [CSS for JS dev](https://css-for-js.dev/) - Josh's CSS course which I highly recommend. A lot of the stuff in this presentation I learned from him.
 - [CSS tricks](https://css-tricks.com/) - So many articles on this one! Chris Coyier's site who is co-creator of [Codepen](codepen.io)
 - [Smashing magazine](https://www.smashingmagazine.com/) - Another site with so many articles. Great web developer content. Not just CSS.
-- [Learn with Jason](https://www.learnwithjason.dev/) - Fun video learning series from Jason Lengstorf. Broadcasts usually on Tuesday and Thursday evenings.
+- [Learn with Jason](https://www.learnwithjason.dev/) - Fun video learning series from Jason Lengstorf. Broadcasts usually on Tuesday and Thursday evenings. There was a great one with Michael Chan on CSS attribute selectors a few days ago!
 
 ## Thanks for listening
 

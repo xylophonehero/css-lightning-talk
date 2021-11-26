@@ -97,7 +97,7 @@ Well duh. It's a talk about CSS grid 🙃
 
 But it's probably not in the way you are thinking...
 
-You might be thinking I've done something like this
+You might be thinking I've done something like this 😁
 
 ```
 .🟣 {
@@ -153,5 +153,7 @@ Multiple children can share the same area 😲
 ```
 
 <GridTemplateExample showControls />
+
+> I also used this technique for the question & answer component. It's a really great alternative to `position: absolute;`
 
 ## I think that's enough for now...

@@ -32,7 +32,12 @@ div {
 
 ### Hold up, let's break it down.
 
-> I'm replace `var(--min-child-width)` with `300px` so it's a bit easier to see
+First let's replace `var(--min-child-width)` with `300px` so it's a bit easier to see 👩‍🏫
+
+```
+grid-template-columns: 
+  repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+```
 
 So the outer bit `repeat(auto-fit, 300px)`.
 This tells the grid to keep on creating columns `300px` wide and when it can't create any more, start a new line 👷‍♀️

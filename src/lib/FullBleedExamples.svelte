@@ -4,7 +4,7 @@
 <style lang="scss">
   .item {
     background-color: var(--main-500);
-    height: 300px;
+    height: 200px;
     font-size: 2rem;
     display: grid;
     place-items: center;

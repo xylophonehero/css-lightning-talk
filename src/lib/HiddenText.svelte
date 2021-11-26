@@ -37,6 +37,14 @@
     grid-template-columns: auto 1fr 150px;
     align-items: center;
     gap: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    .wrapper {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 
   .question-mark {
@@ -45,6 +53,7 @@
     transform: rotate(10deg);
     color: var(--main-500);
     z-index: 2;
+    line-height: 1;
   }
 
   .answer-wrapper {

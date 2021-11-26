@@ -19,11 +19,11 @@ layout: page
 
 - Display property
 - Template/auto columns and/or rows and/or areas
-- Gap between children
+- Gap between children. You can set horizontal and vertical together or separately
 - Alignment of children "justify-content", "align-items", "place-items"...
 
 ```
-.grid {
+.🎁 {
   display: grid;
   grid-template-columns: 200px 100px 300px;
   grid-auto-rows: 200px;
@@ -43,7 +43,7 @@ Much easier to grasp than flex-grow/shrink/basis.
 They can also be mixed with absolute units 😋
 
 ```
-.😝 {
+.🎁 {
   display: grid;
   grid-template-columns: 1fr 100px 2fr;
   grid-auto-rows: 200px;
@@ -63,12 +63,24 @@ By default children are placed into the next available column. If there is no sp
 But we can also control properties of grid children. In this example every 6th item is special
 
 ```
-.🤗:nth-child(6n) {
+.🧒:nth-child(6n) {
   grid-column-start: 2;
   grid-column-end: 4;
+
+  // Or the shorthand
+
+  grid-column: 2 / 4;
+
+  // Or if you want to be really clever
+
+  grid-column: 2 / -1;
+
+  // Or there is even
+
+  grid-column: 2 / span 2
 }
 ```
 
-<SimpleGrid itemSpan />
+<SimpleGrid itemSpan fractional />
 
 ## Ok lets get onto the good stuff! 👍

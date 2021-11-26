@@ -1,12 +1,16 @@
 <script lang="ts">
   import Slider from "@bulatdashiev/svelte-slider"
 
-  let value = [280, 360]
+  const storedValue = window.localStorage.getItem("bg") || 280
+  let value = [storedValue, 360]
 
-  $: document.documentElement.style.setProperty(
-    "--main-color-deg",
-    `${value[0].toString()}deg`
-  )
+  $: {
+    document.documentElement.style.setProperty(
+      "--main-color-deg",
+      `${value[0].toString()}deg`
+    )
+    window.localStorage.setItem("bg", value[0].toString())
+  }
 </script>
 
 <div>
@@ -16,6 +20,8 @@
   </p>
   <p>Hue: {value[0]}</p>
   <Slider min={0} max={360} bind:value />
+
+  <button on:click={() => (value = [280, 360])}>Reset</button>
 </div>
 
 <style lang="scss">
@@ -24,11 +30,5 @@
     font-weight: bold;
     font-size: 1.25rem;
     color: var(--main-200);
-  }
-
-  :root {
-    --track-bg: var(--main-700);
-    --progress-bg: var(--main-500);
-    --thumb-bg: var(--main-200);
   }
 </style>
